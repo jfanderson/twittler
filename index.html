@@ -8,8 +8,11 @@
   </head>
   <body>
     <header>
+
       <h1>Twittler</h1>
+
       <h3>You can't tweet without the Twitt</h3>
+
     </header>
 
     <button type="button" class="refresh">Refresh</button>
@@ -18,12 +21,13 @@
 
       $(document).ready(function(){
         var $body = $('body');
-        var maxTweets = 20;
+        var maxTweets = 20; // Max number of tweets displayed on page at one time
 
+        // Displays tweets with most recent at top
         var showTweets = function() {
-          var index = streams.home.length - 1;
           $('.tweet').remove();
-          while(index >= 0 && streams.home.length - index <= maxTweets){
+          var index = streams.home.length - 1;
+          while(index >= 0 && (streams.home.length - index) <= maxTweets){
             var tweet = streams.home[index];
             var $tweet = $('<div class="tweet"></div>');
             $tweet.text('@' + tweet.user + ': ' + tweet.message);
@@ -33,6 +37,7 @@
         };
         showTweets();
 
+        // Refresh button event
         $('.refresh').click(showTweets);
 
       });
