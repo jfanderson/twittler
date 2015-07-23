@@ -74,6 +74,7 @@ html {
 .name {
   font-size: 4em;
   color: #b8401d;
+  padding-right: .25em;
 }
 
 /*
@@ -83,7 +84,6 @@ html {
 header {
   padding-left: 1%;
   padding-right: 5%;
-  padding-bottom: .5em;
   margin-bottom: .5em;
   border-bottom: 2px solid #22acd4;
 }
