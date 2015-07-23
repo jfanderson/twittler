@@ -57,9 +57,13 @@ table {
 *:before,
 *:after {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
+
+/*
+    TYPOGRAPHY & BACKGROUND
+*/
 
 html {
   background-image: url('assets/crossword/crossword.png');
@@ -67,12 +71,20 @@ html {
   color: #555;
 }
 
-h1 {
+.name {
   font-size: 4em;
   color: #b8401d;
 }
 
-h3 {
-  font-size: 1.5em;
+/*
+    HEADER
+*/
+
+header {
+  padding-left: 1%;
+  padding-right: 5%;
+  padding-bottom: .5em;
+  margin-bottom: .5em;
+  border-bottom: 2px solid #22acd4;
 }
 
