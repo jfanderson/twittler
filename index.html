@@ -28,8 +28,13 @@
           while(index >= 0 && (streams.home.length - index) <= maxTweets){
             var tweet = streams.home[index];
             var $tweet = $('<div class="tweet"></div>');
-            $tweet.text('@' + tweet.user + ': ' + tweet.message);
             $tweet.appendTo($body);
+            var $content = $('<p class="content"></p>')
+            $content.text('@' + tweet.user + ': ' + tweet.message);
+            $content.appendTo($tweet);
+            var $timestamp = $('<p class="timestamp"></p>');
+            $timestamp.text(tweet.created_at);
+            $timestamp.appendTo($tweet);
             index -= 1;
           }
         };
