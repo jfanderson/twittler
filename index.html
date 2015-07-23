@@ -30,7 +30,10 @@
             var $tweet = $('<div class="tweet"></div>');
             $tweet.appendTo($body);
             var $content = $('<p class="content"></p>')
-            $content.text('@' + tweet.user + ': ' + tweet.message);
+            $content.text(': ' + tweet.message);
+            var $username = $('<span class="username"></span>');
+            $username.text('@' + tweet.user);
+            $username.prependTo($content);
             $content.appendTo($tweet);
             var $timestamp = $('<p class="timestamp"></p>');
             $timestamp.text(tweet.created_at);

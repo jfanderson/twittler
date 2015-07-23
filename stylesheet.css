@@ -61,6 +61,21 @@ table {
           box-sizing: border-box;
 }
 
+header {
+  padding-left: 1%;
+  padding-right: 5%;
+  margin-bottom: .5em;
+  border-bottom: 2px solid #22acd4;
+}
+
+.tweet {
+  padding: .5em;
+  margin: .5em;
+  border: 1px solid #bfbfbf;
+  border-radius: 2px;
+}
+
+
 /*
     TYPOGRAPHY & BACKGROUND
 */
@@ -71,20 +86,21 @@ html {
   color: #555;
 }
 
+p {
+  margin-bottom: .25em;
+}
+
 .name {
   font-size: 4em;
   color: #b8401d;
   padding-right: .25em;
 }
 
-/*
-    HEADER
-*/
+.timestamp {
+  font-size: .75em;
+}
 
-header {
-  padding-left: 1%;
-  padding-right: 5%;
-  margin-bottom: .5em;
-  border-bottom: 2px solid #22acd4;
+.username {
+  color: #006b4e;
 }
 
