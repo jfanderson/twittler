@@ -82,6 +82,9 @@ header {
   border-radius: 2px;
 }
 
+.timeline {
+  display: none;
+}
 
 /*
     TYPOGRAPHY & BACKGROUND

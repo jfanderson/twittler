@@ -23,7 +23,7 @@
         var $body = $('body');
         var maxTweets = 20; // Max number of tweets displayed on page at one time
 
-        // Displays tweets with most recent at top
+        // Display tweets with most recent at top
         var showTweets = function() {
           $('.tweet').remove();
           var index = streams.home.length - 1;
@@ -45,11 +45,23 @@
             var $timestamp = $('<p class="timestamp"></p>');
             $timestamp.text(tweet.created_at);
             $timestamp.appendTo($tweet);
-            
+
             index -= 1;
           }
         };
         showTweets();
+
+        // Create user timelines (hidden until username clicked)
+        users.forEach(function(user) {
+          // div containing user timeline
+          var $timeline = $('<div class="timeline ' + user + '"></div>');
+          $timeline.appendTo($body);
+
+          // heading with username
+          var $userHeading = $('<h3></h3>');
+          $userHeading.text(user);
+          $userHeading.appendTo($timeline);
+        });
 
         // Refresh button event
         $('.refresh').click(showTweets);
