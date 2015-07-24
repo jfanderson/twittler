@@ -66,6 +66,12 @@
         // Refresh button event
         $('.refresh').click(showTweets);
 
+        // Username click event
+        $('.username').click(function() {
+          var name = "." + $(this).text().slice(1); // extract username to find div with corresponding class
+          $(name).show('fast');
+        })
+
       });
 
     </script>

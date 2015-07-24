@@ -133,3 +133,12 @@ p {
   text-decoration: none;
   color: #705e54;
 }
+
+/*
+    USER TIMELINES
+*/
+
+.username:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
