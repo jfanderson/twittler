@@ -28,18 +28,24 @@
           $('.tweet').remove();
           var index = streams.home.length - 1;
           while(index >= 0 && (streams.home.length - index) <= maxTweets){
+            // div containing the full tweet
             var tweet = streams.home[index];
             var $tweet = $('<div class="tweet"></div>');
             $tweet.appendTo($body);
+
+            // p containing the tweet's user and message
             var $content = $('<p class="content"></p>')
             $content.text(': ' + tweet.message);
             var $username = $('<span class="username"></span>');
             $username.text('@' + tweet.user);
             $username.prependTo($content);
             $content.appendTo($tweet);
+
+            // p containing the tweet's timestamp
             var $timestamp = $('<p class="timestamp"></p>');
             $timestamp.text(tweet.created_at);
             $timestamp.appendTo($tweet);
+            
             index -= 1;
           }
         };
