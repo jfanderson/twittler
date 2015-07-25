@@ -87,7 +87,7 @@ header {
   width: 50%;
   margin: auto;
   position: absolute;
-  top: 10%; left: 0; bottom: 0; right: 0;
+  top: 10%; left: 0; bottom: 2%; right: 0;
   border: 2px solid #bfbfbf;
   border-radius: 5px;
 }
@@ -117,8 +117,22 @@ p {
   font-size: .75em;
 }
 
-.username {
+.username,
+h3 {
   color: #006b4e;
+}
+
+.timeline {
+  background: #bfbfbf;
+  background-image: url('assets/ticks/ticks.png');
+}
+
+h3 {
+  font-size: 1.1em;
+  text-align: center;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  border-bottom: 1px solid #22acd4;
 }
 
 /*
