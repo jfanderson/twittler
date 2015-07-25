@@ -122,17 +122,25 @@ h3 {
   color: #006b4e;
 }
 
-.timeline {
-  background: #bfbfbf;
-  background-image: url('assets/ticks/ticks.png');
-}
-
 h3 {
   font-size: 1.1em;
   text-align: center;
   padding-top: .5em;
   padding-bottom: .5em;
-  border-bottom: 1px solid #22acd4;
+  margin-bottom: .75em;
+  border-bottom: 2px solid #d2dede;
+}
+
+.blur {
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+.timeline {
+  background: #bfbfbf;
+  background-image: url('assets/ticks/ticks.png');
+  -webkit-filter: none;
+          filter: none;
 }
 
 /*

@@ -68,7 +68,7 @@
             while(index2 >= 0){
               // <div> containing the full tweet
               var tweet = streams.users[user][index2];
-              var $tweet = $('<div class="tl-tweet"></div>');
+              var $tweet = $('<div class="tweet"></div>');
               $tweet.appendTo($timeline);
 
               // <p> containing the tweet's message
@@ -88,11 +88,13 @@
           // Username click events
           $('.username').click(function() {
             // extract username to find div with corresponding class
+            $('header, .refresh, body > .tweet').addClass('blur');
             var $name = $("." + $(this).text().slice(1)); 
             $name.show('fast');
           })
 
           $('h3').click(function() {
+            $('header, .refresh, body > .tweet').removeClass('blur');
             var $name = $('.' + $(this).text());
             $name.hide('fast');
           })
