@@ -23,17 +23,18 @@
         var $body = $('body');
         var maxTweets = 20; // Max number of tweets displayed on page at one time
 
-        // Display tweets with most recent at top
-        var showTweets = function() {
+        // Display tweets and load user timelines
+        var loadPage = function() {
           $('.tweet').remove();
+          $('.timeline').remove();
           var index = streams.home.length - 1;
           while(index >= 0 && (streams.home.length - index) <= maxTweets){
-            // div containing the full tweet
+            // <div> containing the full tweet
             var tweet = streams.home[index];
             var $tweet = $('<div class="tweet"></div>');
             $tweet.appendTo($body);
 
-            // p containing the tweet's user and message
+            // <p> containing the tweet's user and message
             var $content = $('<p class="content"></p>')
             $content.text(': ' + tweet.message);
             var $username = $('<span class="username"></span>');
@@ -41,37 +42,37 @@
             $username.prependTo($content);
             $content.appendTo($tweet);
 
-            // p containing the tweet's timestamp
+            // <p> containing the tweet's timestamp
             var $timestamp = $('<p class="timestamp"></p>');
             $timestamp.text(tweet.created_at);
             $timestamp.appendTo($tweet);
 
             index -= 1;
           }
+
+          // Create user timelines (hidden until username clicked)
+          users.forEach(function(user) {
+            // <div> containing user timeline
+            var $timeline = $('<div class="timeline ' + user + '"></div>');
+            $timeline.appendTo($body);
+
+            // heading with username
+            var $userHeading = $('<h3></h3>');
+            $userHeading.text(user);
+            $userHeading.appendTo($timeline);
+          });
+
+          // Username click event
+          $('.username').click(function() {
+            // extract username to find div with corresponding class
+            var $name = $("." + $(this).text().slice(1)); 
+            $name.show('fast');
+          })
         };
-        showTweets();
-
-        // Create user timelines (hidden until username clicked)
-        users.forEach(function(user) {
-          // div containing user timeline
-          var $timeline = $('<div class="timeline ' + user + '"></div>');
-          $timeline.appendTo($body);
-
-          // heading with username
-          var $userHeading = $('<h3></h3>');
-          $userHeading.text(user);
-          $userHeading.appendTo($timeline);
-        });
+        loadPage();
 
         // Refresh button event
-        $('.refresh').click(showTweets);
-
-        // Username click event
-        $('.username').click(function() {
-          var name = "." + $(this).text().slice(1); // extract username to find div with corresponding class
-          $(name).show('fast');
-        })
-
+        $('.refresh').click(loadPage);
       });
 
     </script>
