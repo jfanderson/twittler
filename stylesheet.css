@@ -86,8 +86,8 @@ header {
   display: none;
   width: 50%;
   margin: auto;
-  position: absolute;
-  top: 10%; left: 0; bottom: 2%; right: 0;
+  position: fixed;
+  top: 10%; left: 0; bottom: 5%; right: 0;
   border: 2px solid #bfbfbf;
   border-radius: 5px;
 }
@@ -139,9 +139,8 @@ h3 {
 .timeline {
   background: #bfbfbf;
   background-image: url('assets/ticks/ticks.png');
-  -webkit-filter: none;
-          filter: none;
 }
+
 
 /*
     REFRESH BUTTON
