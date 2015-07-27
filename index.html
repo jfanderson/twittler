@@ -21,7 +21,7 @@
 
       $(document).ready(function(){
         var $body = $('body');
-        var maxTweets = 20; // Max number of tweets displayed on page at one time
+        var maxTweets = 15; // Max number of tweets displayed on page at one time
 
         // Display tweets and load user timelines
         var loadPage = function() {
@@ -89,7 +89,7 @@
             }
           });
 
-          // Username click events
+          // Click username to open timeline
           $('.username').click(function() {
             // extract username to find div with corresponding class
             $('header, .refresh, body > .tweet').addClass('blur');
@@ -97,6 +97,7 @@
             $name.show('fast');
           })
 
+          // Close timeline
           $('.close').click(function() {
             $('header, .refresh, body > .tweet').removeClass('blur');
             var $name = $('.' + $(this).siblings('h3').text());
@@ -105,7 +106,7 @@
         };
         loadPage();
 
-        // Refresh button event
+        // Refresh button
         $('.refresh').click(loadPage);
       });
 
