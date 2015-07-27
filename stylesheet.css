@@ -141,6 +141,12 @@ h3 {
   background-image: url('assets/ticks/ticks.png');
 }
 
+.close {
+  float: right;
+  font-size: 1.1em;
+  margin-top: .5em;
+  margin-right: 1em;
+}
 
 /*
     REFRESH BUTTON
@@ -170,6 +176,7 @@ h3 {
   text-decoration: underline;
 }
 
-h3:hover {
+.close:hover {
   cursor: pointer;
 }
+

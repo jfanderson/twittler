@@ -59,6 +59,10 @@
             $timeline.appendTo($body);
 
             // heading with username
+            var $closeButton = $('<span class="close"></span>');
+            $closeButton.text('X');
+            $closeButton.appendTo($timeline);
+
             var $userHeading = $('<h3></h3>');
             $userHeading.text(user);
             $userHeading.appendTo($timeline);
@@ -93,9 +97,9 @@
             $name.show('fast');
           })
 
-          $('h3').click(function() {
+          $('.close').click(function() {
             $('header, .refresh, body > .tweet').removeClass('blur');
-            var $name = $('.' + $(this).text());
+            var $name = $('.' + $(this).siblings('h3').text());
             $name.hide('fast');
           })
         };
